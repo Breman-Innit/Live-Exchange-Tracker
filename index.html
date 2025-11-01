@@ -10,16 +10,67 @@
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.3.1/dist/chartjs-adapter-luxon.min.js"></script>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
     <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-exchange-alt logo-icon"></i>
+                <h1 class="logo-text">CurrencyFlow Pro</h1>
+            </div>
+            <div class="header-controls">
+                <div class="last-update" id="lastUpdate">
+                    <i class="fas fa-sync-alt"></i>
+                    Updated: Just now
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
 
         <div class="main-grid">
-            <div class="card">
+            <!-- Converter Section - Always visible without scrolling -->
+            <div class="card converter-section">
                 <h2 class="card-title">
                     <i class="fas fa-calculator"></i>
                     Global Currency Converter
                 </h2>
+                
+                <!-- Result card moved to top for immediate visibility -->
+                <div class="result-card" id="resultCard">
+                    <div class="trend-line"></div>
+                    <div class="result-header">
+                        <h3 class="result-title">Conversion Result</h3>
+                        <div class="market-movement">
+                            <div class="movement-indicator movement-up" id="rateChange">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+0.25%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-amount" id="resultAmount">0.00</div>
+                    <div class="result-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Exchange Rate</span>
+                            <span class="detail-value" id="exchangeRate">1.00</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Last Updated</span>
+                            <span class="detail-value" id="lastUpdated">Just now</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Market Trend</span>
+                            <span class="detail-value" id="marketTrend">Stable</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">24h Change</span>
+                            <span class="detail-value" id="dailyChange">+0.00%</span>
+                        </div>
+                    </div>
+                </div>
+
                 <form class="converter-form" id="converterForm">
                     <div class="input-group">
                         <label class="input-label" for="amount">
@@ -85,41 +136,10 @@
                     <div class="status-indicator status-live"></div>
                     <span>Realistic exchange rates with market simulation</span>
                 </div>
-
-                <div class="result-card" id="resultCard">
-                    <div class="trend-line"></div>
-                    <div class="result-header">
-                        <h3 class="result-title">Conversion Result</h3>
-                        <div class="market-movement">
-                            <div class="movement-indicator movement-up" id="rateChange">
-                                <i class="fas fa-arrow-up"></i>
-                                <span>+0.25%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="result-amount" id="resultAmount">0.00</div>
-                    <div class="result-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Exchange Rate</span>
-                            <span class="detail-value" id="exchangeRate">1.00</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Last Updated</span>
-                            <span class="detail-value" id="lastUpdated">Just now</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Market Trend</span>
-                            <span class="detail-value" id="marketTrend">Stable</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">24h Change</span>
-                            <span class="detail-value" id="dailyChange">+0.00%</span>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <div class="card">
+            <!-- Chart Section - Visible on scroll -->
+            <div class="card chart-section">
                 <div class="projection-pulse"></div>
                 <h2 class="card-title">
                     <i class="fas fa-chart-line"></i>
@@ -162,29 +182,13 @@
             </div>
         </div>
 
-            <header>
-            <div class="logo">
-                <i class="fas fa-exchange-alt logo-icon"></i>
-                <h1 class="logo-text">CurrencyFlow Pro</h1>
-            </div>
-            <div class="header-controls">
-                <div class="last-update" id="lastUpdate">
-                    <i class="fas fa-sync-alt"></i>
-                    Updated: Just now
-                </div>
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-
         <footer>
             <p>CurrencyFlow Pro &copy; 2023 | Professional currency converter with market analysis</p>
         </footer>
     </div>
 
-    
-        </header>
-
-    <script src="script.js"></script>
+    <script src="script.js">
+       
+    </script>
 </body>
 </html>
