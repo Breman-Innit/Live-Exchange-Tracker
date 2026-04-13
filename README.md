@@ -25,7 +25,7 @@ How It Works
 4.View exchange rate trends and market projections on the chart.
 
 Future Enhancements
-1.🔔 Currency rate alert notifications
-2.💬 Multi-language support
-3.📅 Advanced analytics dashboard
-4.🪙 Integration with crypto market data
+1. Currency rate alert notifications
+2. Multi-language support
+3. Advanced analytics dashboard
+4. Integration with crypto market data
